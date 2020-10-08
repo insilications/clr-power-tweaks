@@ -1,7 +1,7 @@
 From a5ba8460c4539a35c72276ebab3aed62d341cf55 Mon Sep 17 00:00:00 2001
 From: insilications <boboniboni@gmail.com>
 Date: Thu, 10 Sep 2020 01:03:48 -0300
-Subject: [PATCH] My data.h
+Subject: [PATCH 1/2] My data.h
 
 ---
  src/data.h | 172 +++++++++++++++++++++++++++++++++++++----------------
@@ -230,5 +230,5 @@ index a192958..4f099b9 100644
  	{NULL, NULL, 0}
  };
 -- 
-2.27.0
+2.28.0
 
