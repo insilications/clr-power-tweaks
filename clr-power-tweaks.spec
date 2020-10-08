@@ -5,9 +5,9 @@
 %define keepstatic 1
 Name     : clr-power-tweaks
 Version  : 211
-Release  : 142
-URL      : https://github.com/clearlinux/clr-power-tweaks/releases/download/v211/clr-power-tweaks-211.tar.gz
-Source0  : https://github.com/clearlinux/clr-power-tweaks/releases/download/v211/clr-power-tweaks-211.tar.gz
+Release  : 143
+URL      : file:///insilications/build/clearlinux/packages/clr-power-tweaks/clr-power-tweaks-.tar.gz
+Source0  : file:///insilications/build/clearlinux/packages/clr-power-tweaks/clr-power-tweaks-.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-3.0
@@ -20,11 +20,12 @@ BuildRequires : automake-dev
 BuildRequires : libtool-dev
 BuildRequires : m4
 BuildRequires : pkgconfig(systemd)
-Patch1: 0001-My-data.h.patch
-Patch2: 0002-Fix-congested_read_threshold_us-congested_write_thre.patch
 
 %description
-No detailed description available
+## clr-power-tweaks
+This is a utility, authored for the purposes of Clear Linux, that sets
+reasonable power management defaults for platform devices. This is to improve
+energy efficiency while platform is idle.
 
 %package autostart
 Summary: autostart components for the clr-power-tweaks package.
@@ -60,10 +61,8 @@ services components for the clr-power-tweaks package.
 
 
 %prep
-%setup -q -n clr-power-tweaks-211
-cd %{_builddir}/clr-power-tweaks-211
-%patch1 -p1
-%patch2 -p1
+%setup -q -n clr-power-tweaks
+cd %{_builddir}/clr-power-tweaks
 
 %build
 unset http_proxy
@@ -71,7 +70,7 @@ unset https_proxy
 unset no_proxy
 export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1602130336
+export SOURCE_DATE_EPOCH=1602146474
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -94,8 +93,8 @@ export NM=gcc-nm
 #
 export MAKEFLAGS=%{?_smp_mflags}
 #
-%define _lto_cflags 1
-#%define _lto_cflags %{nil}
+%global _lto_cflags 1
+#%global _lto_cflags %{nil}
 #
 # export PATH="/usr/lib64/ccache/bin:$PATH"
 # export CCACHE_NOHASHDIR=1
@@ -106,7 +105,7 @@ export MAKEFLAGS=%{?_smp_mflags}
 ##
 %define _lto_cflags 1
 ##
-%configure
+%autogen
 make  %{?_smp_mflags}
 
 
@@ -119,7 +118,7 @@ export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 make %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1602130336
+export SOURCE_DATE_EPOCH=1602146474
 rm -rf %{buildroot}
 %make_install
 ## install_append content
