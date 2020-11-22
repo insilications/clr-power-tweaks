@@ -5,7 +5,7 @@
 %define keepstatic 1
 Name     : clr-power-tweaks
 Version  : 211
-Release  : 143
+Release  : 144
 URL      : file:///insilications/build/clearlinux/packages/clr-power-tweaks/clr-power-tweaks-.tar.gz
 Source0  : file:///insilications/build/clearlinux/packages/clr-power-tweaks/clr-power-tweaks-.tar.gz
 Summary  : No detailed summary available
@@ -70,7 +70,7 @@ unset https_proxy
 unset no_proxy
 export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1602146474
+export SOURCE_DATE_EPOCH=1606025231
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -94,7 +94,7 @@ export NM=gcc-nm
 export MAKEFLAGS=%{?_smp_mflags}
 #
 %global _lto_cflags 1
-#%global _lto_cflags %{nil}
+#global _lto_cflags %{nil}
 #
 # export PATH="/usr/lib64/ccache/bin:$PATH"
 # export CCACHE_NOHASHDIR=1
@@ -103,7 +103,7 @@ export MAKEFLAGS=%{?_smp_mflags}
 # export CCACHE_DISABLE=1
 ## altflags1 end
 ##
-%define _lto_cflags 1
+%global _lto_cflags 1
 ##
 %autogen
 make  %{?_smp_mflags}
@@ -118,7 +118,7 @@ export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 make %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1602146474
+export SOURCE_DATE_EPOCH=1606025231
 rm -rf %{buildroot}
 %make_install
 ## install_append content
