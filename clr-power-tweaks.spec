@@ -5,7 +5,7 @@
 %define keepstatic 1
 Name     : clr-power-tweaks
 Version  : 211
-Release  : 149
+Release  : 151
 URL      : file:///aot/build/clearlinux/packages/clr-power-tweaks/clr-power-tweaks-.tar.gz
 Source0  : file:///aot/build/clearlinux/packages/clr-power-tweaks/clr-power-tweaks-.tar.gz
 Summary  : No detailed summary available
@@ -79,7 +79,7 @@ unset https_proxy
 unset no_proxy
 export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1618364651
+export SOURCE_DATE_EPOCH=1618367225
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -124,7 +124,7 @@ export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 make %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1618364651
+export SOURCE_DATE_EPOCH=1618367225
 rm -rf %{buildroot}
 %make_install
 ## install_append content
