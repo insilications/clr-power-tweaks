@@ -1,2 +1,14 @@
 # This file contains build requirements that get picked up but are
 # undesirable. One entry per line, no whitespace.
+gcc-dev32
+gcc-doc
+gcc-go
+gcc-go-lib
+gcc-libgcc32
+gcc-libs-math
+gcc-libstdc++32
+gcc-libubsan
+gcc-locale
+libgcc1
+libstdc++
+libstdc++-dev
