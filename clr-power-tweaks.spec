@@ -5,7 +5,7 @@
 %define keepstatic 1
 Name     : clr-power-tweaks
 Version  : 211
-Release  : 154
+Release  : 155
 URL      : file:///aot/build/clearlinux/packages/clr-power-tweaks/clr-power-tweaks-.tar.gz
 Source0  : file:///aot/build/clearlinux/packages/clr-power-tweaks/clr-power-tweaks-.tar.gz
 Summary  : No detailed summary available
@@ -17,15 +17,7 @@ Requires: clr-power-tweaks-man = %{version}-%{release}
 Requires: clr-power-tweaks-services = %{version}-%{release}
 BuildRequires : automake-dev
 BuildRequires : gcc
-BuildRequires : gcc-abi
-BuildRequires : gcc-bin
-BuildRequires : gcc-data
 BuildRequires : gcc-dev
-BuildRequires : gcc-info
-BuildRequires : gcc-lib
-BuildRequires : gcc-locales
-BuildRequires : gcc-man
-BuildRequires : gcc-staticdev
 BuildRequires : libtool-dev
 BuildRequires : m4
 BuildRequires : pkgconfig(systemd)
@@ -79,7 +71,7 @@ unset https_proxy
 unset no_proxy
 export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1618443640
+export SOURCE_DATE_EPOCH=1619978025
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -124,7 +116,7 @@ export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 make %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1618443640
+export SOURCE_DATE_EPOCH=1619978025
 rm -rf %{buildroot}
 %make_install
 ## install_append content

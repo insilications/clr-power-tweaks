@@ -2,14 +2,6 @@
 # picked up automatically. One name per line, no whitespace.autoconf
 automake-dev
 gcc
-gcc-abi
-gcc-bin
-gcc-data
 gcc-dev
-gcc-info
-gcc-lib
-gcc-locales
-gcc-man
-gcc-staticdev
 libtool-dev
 m4
